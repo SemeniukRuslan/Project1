@@ -22,7 +22,7 @@ class CoffeeMachine {
             if (command.contains("buy")) {
                 System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:");
                 Scanner scanner1 = new Scanner(System.in);
-                String selectCoffee = scanner1.nextLine();
+                String selectCoffee = scanner1.next();
                 System.out.println();
 
                 if (selectCoffee.contains("1")) {
