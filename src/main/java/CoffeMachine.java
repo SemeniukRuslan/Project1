@@ -3,12 +3,10 @@ import java.util.Scanner;
 class CoffeeMachine {
     public static void main(String[] args) {
         calculateIngr();
-
     }
 
     public static void calculateIngr() {
 
-        ///???
         System.out.println("Write action (buy, fill, take, remaining, exit):");
         Scanner scanner = new Scanner(System.in);
         String command = scanner.nextLine();
@@ -19,11 +17,7 @@ class CoffeeMachine {
         int cupsInMachine = 9;
         int moneyInMachine = 550;
 
-        ///???
         while (!command.contains("exit")) {
-
-            System.out.println("Write action (buy, fill, take, remaining, exit):");
-            command = scanner.next();
 
             if (command.contains("buy")) {
                 System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:");
@@ -65,8 +59,12 @@ class CoffeeMachine {
                         moneyInMachine = moneyInMachine + 6;
                         System.out.println("I have enough resources, making you a coffee!");
                     }
+
                 } else if (selectCoffee.contains("back")) {
-                    ///???
+                    System.out.println("Write action (buy, fill, take, remaining, exit):");
+                    command = scanner.next();
+                } else{
+                    System.out.println("Wrong input");
                 }
 
             } else if (command.contains("fill")) {
@@ -85,11 +83,15 @@ class CoffeeMachine {
                 int cupsToAdd = scanner2.nextInt();
                 cupsInMachine = cupsToAdd + cupsInMachine;
                 System.out.println();
+                System.out.println("Write action (buy, fill, take, remaining, exit):");
+                command = scanner.next();
 
             } else if (command.contains("take")) {
                 System.out.println("I gave you $" + moneyInMachine);
                 moneyInMachine = 0;
                 System.out.println();
+                System.out.println("Write action (buy, fill, take, remaining, exit):");
+                command = scanner.next();
 
             } else if (command.contains("remaining")) {
                 System.out.println();
@@ -100,6 +102,8 @@ class CoffeeMachine {
                         cupsInMachine + " disposable cups\n" +
                         moneyInMachine + "$ of money");
                 System.out.println();
+                System.out.println("Write action (buy, fill, take, remaining, exit):");
+                command = scanner.next();
             }
         }
     }
